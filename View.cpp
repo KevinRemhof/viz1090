@@ -930,7 +930,7 @@ void View::drawPlanes() {
 
                     if(p->altitude > 40000) {
                         planeColor = pink;
-                    } else if(p->altitude > 35000) {
+                    } else if(p->altitude > 32500) {
                         planeColor = purple;
                     } else if (p->altitude > 30000) {
                         planeColor = blue_dark;
