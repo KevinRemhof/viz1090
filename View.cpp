@@ -914,19 +914,19 @@ void View::drawPlanes() {
                     }
 
                     // KTR-Use altitude for plane color to match adsb.fi, etc.
-                    SDL_Color pink          = {249,38,114,255};
-                    SDL_Color purple        = {85, 0, 255,255};
-                    SDL_Color purple_dark   = {33, 0, 122,255};
-                    SDL_Color blue          = {102,217,239,255};
-                    SDL_Color blue_dark             = {102,217,239,255};
-                    SDL_Color green         = {0,255,234,255};
-                    SDL_Color green_dark    = {24,100,110,255};
-                    SDL_Color yellow        = {216,255,0,255};
-                    SDL_Color yellow_dark   = {90,133,50,255};
-                    SDL_Color orange        = {253,151,31,255};
-                    SDL_Color grey_light    = {196,196,196,255};
-                    SDL_Color grey          = {127,127,127,255};
-                    SDL_Color grey_dark     = {64,64,64,255};
+                    SDL_Color pink          = {249, 38, 114, 255};
+                    SDL_Color purple        = {160, 63, 233, 255};
+                    SDL_Color purple_dark   = {33, 0, 122, 255};
+                    SDL_Color blue          = {102, 217, 239, 255};
+                    SDL_Color blue_dark     = {102, 217, 239, 255};
+                    SDL_Color green         = {0, 255, 234, 255};
+                    SDL_Color green_dark    = {24, 100, 110, 255};
+                    SDL_Color yellow        = {216, 255, 0, 255};
+                    SDL_Color yellow_dark   = {90, 133, 50, 255};
+                    SDL_Color orange        = {253, 151, 31, 255};
+                    SDL_Color grey_light    = {196, 196, 196, 255};
+                    SDL_Color grey          = {127, 127, 127, 255};
+                    SDL_Color grey_dark     = {64, 64, 64, 255};
 
                     if(p->altitude > 40000) {
                         planeColor = pink;
