@@ -598,7 +598,7 @@ void View::drawLines(int left, int top, int right, int bottom, int bailTime) {
 
     drawLinesRecursive(&(map.airport_root), screen_lat_min, screen_lat_max, screen_lon_min, screen_lon_max, style.airportColor);
 
-    drawTrails(left, top, right, bottom);
+    // KTR drawTrails(left, top, right, bottom);
 }
 
 void View::drawLinesRecursive(QuadTree *tree, float screen_lat_min, float screen_lat_max, float screen_lon_min, float screen_lon_max, SDL_Color color) {
@@ -913,6 +913,36 @@ void View::drawPlanes() {
                         planeColor = style.selectedColor;
                     }
 
+                    // KTR-Use altitude for plane color to match adsb.fi, etc.
+                    SDL_Color pink          = {249,38,114,255};
+                    SDL_Color purple        = {85, 0, 255,255};
+                    SDL_Color purple_dark   = {33, 0, 122,255};
+                    SDL_Color blue          = {102,217,239,255};
+                    SDL_Color blue_dark             = {102,217,239,255};
+                    SDL_Color green         = {0,255,234,255};
+                    SDL_Color green_dark    = {24,100,110,255};
+                    SDL_Color yellow        = {216,255,0,255};
+                    SDL_Color yellow_dark   = {90,133,50,255};
+                    SDL_Color orange        = {253,151,31,255};
+                    SDL_Color grey_light    = {196,196,196,255};
+                    SDL_Color grey          = {127,127,127,255};
+                    SDL_Color grey_dark     = {64,64,64,255};
+
+                    if(p->altitude > 40000) {
+                        planeColor = pink;
+                    } else if(p->altitude > 35000) {
+                        planeColor = purple;
+                    } else if (p->altitude > 30000) {
+                        planeColor = blue_dark;
+                    } else if (p->altitude > 20000) {
+                       planeColor = blue;
+                    } else if (p->altitude > 8000) {
+                        planeColor = green;
+                    } else if (p->altitude > 5000) {
+                        planeColor = yellow;
+                    } else {
+                        planeColor = orange;
+                    }
 
                     if(outOfBounds(x,y)) {
                         drawPlaneOffMap(x, y, &(p->x), &(p->y), planeColor);
