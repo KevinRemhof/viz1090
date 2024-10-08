@@ -78,11 +78,13 @@ typedef struct Style {
 	    planeGoneColor = grey;
 	    trailColor = {0,255,174};
 
-	    geoColor = grey_dark;
+	    //KTR geoColor = grey_dark;
+		geoColor = green;
 	    airportColor = grey;
 
 	    labelColor = white;
-	    labelLineColor = grey_dark;
+	    //KTR labelLineColor = grey_dark;
+		labelLineColor = green;
 	    subLabelColor = grey;
 	   	labelBackground = black;
 	    scaleBarColor = grey_light;
